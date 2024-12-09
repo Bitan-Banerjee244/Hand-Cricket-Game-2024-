@@ -239,7 +239,7 @@ nav {
 @media screen and (max-width: 500px) {
   nav {
     font-size: 25px;
-     text-align: center;
+    text-align: center;
   }
   .box {
     width: 90vw;
@@ -262,10 +262,12 @@ nav {
   }
   .main {
     flex-direction: column;
+    height: 80%;
   }
   .massegeBox {
-    font-size: 30px;
+    font-size: 20px;
     text-align: center;
+    height: 20%;
   }
   .user,
   .computer {
