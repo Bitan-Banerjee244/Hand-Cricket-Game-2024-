@@ -12,6 +12,8 @@ body {
   background: url("./assests/background.webp");
   background-size: cover;
   object-fit: contain;
+    user-select: none;
+
 }
 .imgbat,.imgbowl{
   pointer-events: none;
