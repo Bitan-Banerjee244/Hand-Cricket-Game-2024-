@@ -56,12 +56,13 @@ nav {
   background-color: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   gap: 60px;
-  border: 2px solid white;
+  border: 3px solid white;
 }
 .box h1 {
   font-size: 50px;
   text-transform: uppercase;
-  color: rgb(86, 4, 45);
+  color: rgb(104, 37, 204);
+  text-shadow:0px -1px 10px #08b831;
 }
 .batting,
 .bowling {
@@ -85,6 +86,7 @@ nav {
 }
 /* Building game container */
 .gameContainer {
+  position: relative;
   margin-top: 50px;
   width: 80vw;
   height: 90vh;
@@ -98,18 +100,21 @@ nav {
 
 .massegeBox {
   width: 100%;
-  height: 10%;
-  color: cyan;
+  height: 20%;
+  color: rgb(234, 103, 2);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 4px;
+  text-align: center;
+  text-shadow: 0px 1px  orange;
 }
 
 .main {
   width: 100%;
-  height: 90%;
+  height: 80%;
   /* background-color: red; */
   display: flex;
   justify-content: space-around;
@@ -159,13 +164,14 @@ nav {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  border: 2px solid aqua;
 }
 .computer {
   width: 200px;
   height: 200px;
   background-color: beige;
   border-radius: 50%;
-  background: linear-gradient(135deg, #30e3ca, #ff5c00, #ffc107);
+  background: linear-gradient(135deg, #e113d7, #ff5c00, #ffc107);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
   font-size: 115px;
   color: white;
@@ -173,6 +179,7 @@ nav {
   align-items: center;
   justify-content: center;
   pointer-events: none;
+  border: 2px solid pink;
 }
 .InputShowcase span {
   font-size: 70px;
@@ -181,6 +188,7 @@ nav {
 .scoreCard {
   width: 95%;
   height: 25%;
+  font-family: Georgia, "Times New Roman", Times, serif;
   background-color: #edead9f7;
   font-size: 100px;
   display: flex;
@@ -193,7 +201,9 @@ nav {
 .targetBox {
   width: 95%;
   height: 24%;
-  background-color: #e6e6fa;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  border: 2px solid aqua;
+  background-color: #edd5d3;
   border-radius: 20px;
   font-size: 100px;
   display: flex;
@@ -221,6 +231,7 @@ nav {
   align-items: center;
   justify-content: center;
   color: #003366;
+  text-shadow: 0px 3px 20px  rgb(191, 233, 21);
 }
 .input:hover {
   background: rgba(173, 216, 230, 0.4);
@@ -238,7 +249,7 @@ nav {
 
 @media screen and (max-width: 500px) {
   nav {
-    font-size: 25px;
+    font-size: 19px;
     text-align: center;
   }
   .box {
@@ -253,7 +264,10 @@ nav {
   }
   .batting,
   .bowling {
-    padding: 20px 50px;
+    padding: 20px 30px;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: 'Times New Roman', Times, serif;
   }
   /* Main Box Responsive ness */
   .gameContainer {
@@ -265,9 +279,9 @@ nav {
     height: 80%;
   }
   .massegeBox {
-    font-size: 20px;
+    font-size: 23px;
     text-align: center;
-    height: 20%;
+    height: 10%;
   }
   .user,
   .computer {
@@ -280,6 +294,9 @@ nav {
   }
   .InputShowcase span {
     font-size: 30px;
+    color: #6a0572;
+    padding:10px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   }
   .left,
   .right {
@@ -289,12 +306,15 @@ nav {
   .targetBox {
     width: 70%;
     height: 25%;
-    font-size: 40px;
+    font-size: 35px;
     margin-top: 20px;
   }
+  .targetBox {
+    margin-bottom: 10px;
+  }
   .input {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     font-size: 60px;
   }
   body {
@@ -304,6 +324,8 @@ nav {
     align-items: center;
     background: url("./assests/background.webp");
     background-size: cover;
-    object-fit: contain;
+    object-fit: cover;
+    background-repeat: none;
   }
 }
+
