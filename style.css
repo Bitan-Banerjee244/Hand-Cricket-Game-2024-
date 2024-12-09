@@ -13,6 +13,9 @@ body {
   background-size: cover;
   object-fit: contain;
 }
+.imgbat,.imgbowl{
+  pointer-events: none;
+}
 
 .welcome {
   margin-top: 50px;
