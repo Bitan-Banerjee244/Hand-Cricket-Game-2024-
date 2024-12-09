@@ -1,4 +1,5 @@
 // ! Variable Declaration
+const gameAudio = new Audio("./assests/the-cricket-music-box-245709.mp3");
 let bat = document.querySelector(".batting");
 let bowl = document.querySelector(".bowling");
 let box = document.querySelector(".box");
@@ -56,18 +57,18 @@ function animation() {
   );
 }
 
-gsap.from(".box", { y: 1000, scale: 0, duration: 3, delay: 2 });
+gsap.from(".box", { y: 1000, scale: 0, duration: 3, delay: 1 });
 
 //! buttons animation
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     gsap.to(button, {
-      backgroundColor: "rgba(50, 205, 50, 0.6)",
+      backgroundColor: "rgba(205, 50, 50, 0.6)",
       duration: 0.5,
       onComplete: () => {
         gsap.to(button, {
           backgroundColor: "rgba(255, 255, 255, 0.2)",
-          duration: 1.5,
+          duration: 0.5,
         }); // Fades back after 1 second
       },
     });
@@ -366,8 +367,10 @@ function decode(emoji) {
 
 //! If user Chose bowling
 function computerScoreTracker(userInput, computerInput) {
-  batContainer.style.background="linear-gradient(135deg, #30e3ca, #ff5c00, #ffc107)"
-  bowlContainer.style.background="linear-gradient(135deg, #6a0572, #00bfff, #a8e1b5)"
+  batContainer.style.background =
+    "linear-gradient(135deg, #30e3ca, #ff5c00, #ffc107)";
+  bowlContainer.style.background =
+    "linear-gradient(135deg, #6a0572, #00bfff, #a8e1b5)";
   userBox.innerHTML = `${transformer(userInput)}`;
   computerBox.innerHTML = `${transformer(computerInput)}`;
   animation();
@@ -402,10 +405,12 @@ function computerScoreTracker(userInput, computerInput) {
 }
 
 function userBatting(userInput, computerInput) {
-  batImage.style.filter="brightness(1)"
-  bowlImage.style.filter="brightness(0.3)"
-  bowlContainer.style.background="linear-gradient(135deg, #30e3ca, #ff5c00, #ffc107)"
-  batContainer.style.background="linear-gradient(135deg, #6a0572, #00bfff, #a8e1b5)"
+  batImage.style.filter = "brightness(1)";
+  bowlImage.style.filter = "brightness(0.3)";
+  bowlContainer.style.background =
+    "linear-gradient(135deg, #30e3ca, #ff5c00, #ffc107)";
+  batContainer.style.background =
+    "linear-gradient(135deg, #6a0572, #00bfff, #a8e1b5)";
   userBox.innerHTML = `${transformer(userInput)}`;
   computerBox.innerHTML = `${transformer(computerInput)}`;
   animation();
