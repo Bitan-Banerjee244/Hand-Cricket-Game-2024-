@@ -12,11 +12,7 @@ body {
   background: url("./assests/background.webp");
   background-size: cover;
   object-fit: contain;
-    user-select: none;
-
-}
-.imgbat,.imgbowl{
-  pointer-events: none;
+  user-select: none;
 }
 
 .welcome {
@@ -70,7 +66,7 @@ nav {
   text-shadow:0px -1px 10px #08b831;
 }
 .batting,
-.bowling {
+.bowling,.restart {
   padding: 50px 200px;
   font-size: 55px;
   color: brown;
@@ -89,9 +85,17 @@ nav {
   backdrop-filter: blur(10px);
   border: 2px solid white;
 }
+.restart1{
+font-size: 20px;
+background-color: transparent;
+color: rgb(225, 233, 10);
+border: transparent;
+
+}
 /* Building game container */
 .gameContainer {
   position: relative;
+  /* top:-90px; */
   margin-top: 50px;
   width: 80vw;
   height: 90vh;
@@ -201,6 +205,7 @@ nav {
   justify-content: center;
   border-radius: 20px;
   color: #0a550a;
+  border: 2px solid red;
 }
 
 .targetBox {
@@ -251,6 +256,9 @@ nav {
   overflow: hidden;
   border-radius: 10px;
 }
+.imgbat,.imgbowl{
+  pointer-events: none;
+}
 
 @media screen and (max-width: 500px) {
   nav {
@@ -276,6 +284,7 @@ nav {
   }
   /* Main Box Responsive ness */
   .gameContainer {
+    /* position: relative; */
     width: 90vw;
     height: 90vh;
   }
@@ -318,9 +327,13 @@ nav {
     margin-bottom: 10px;
   }
   .input {
-    width: 90px;
-    height: 90px;
-    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    font-size: 55px;
+  }
+  .restart1{
+    font-size: 16px;
+    text-decoration: underline;
   }
   body {
     min-height: 100vh;
@@ -333,4 +346,5 @@ nav {
     background-repeat: none;
   }
 }
+
 
