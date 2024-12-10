@@ -15,6 +15,7 @@ const bowlImage = document.querySelector(".imgbowl img");
 const bowlContainer = document.querySelector(".imgbowl");
 let target = document.querySelector(".targetBox");
 let welcome = document.querySelector(".welcome");
+let restart=document.querySelector(".restart1");
 // ! Some important counter to handle
 gameContainer.style.display = "none";
 var userConcern = 0;
@@ -84,6 +85,7 @@ bat.addEventListener("click", () => {
   userConcern = 1;
   tl.from(".gameContainer", { duration: 2, scale: 0.1 }, "after");
   tl.from(".massegeBox", { y: -1000, scale: 1, duration: 1 }, "same");
+  tl.from(".restart1", { y: -1000, scale: 1, duration: 1 }, "same");
   tl.to(
     ".input",
     { scale: 0.9, duration: 0.5, stagger: 0.15, opacity: 1 },
@@ -101,6 +103,7 @@ bowl.addEventListener("click", () => {
   userConcern = 2;
   tl.from(".gameContainer", { duration: 2, scale: 0.1 }, "after");
   tl.from(".massegeBox", { y: -1000, scale: 1, duration: 1 }, "same");
+  tl.from(".restart1", { y: -1000, scale: 1, duration: 1 }, "same");
   tl.to(
     ".input",
     { scale: 0.9, duration: 0.5, stagger: 0.15, opacity: 1 },
@@ -220,13 +223,13 @@ function batscoreTracker(userInput, computerInput) {
     score.innerHTML = `Score : ${userScore}`;
   } else {
     massage.innerHTML =
-      "You are Out !! Press  the target button for your bowling";
+      "You are Out !! Press the target button for your bowling";
 
     buttons.forEach((e) => {
       e.disabled = true;
     });
     disableButtons(); // Disable buttons when out
-    score.disabled = true;
+    score.disabled = false;
     target.innerHTML = `Target : ${userScore + 1}`;
     target.disabled = false;
     targetCounter = 1;
@@ -254,7 +257,7 @@ target.addEventListener("click", () => {
     });
     userConcern = 3;
     targetCounter = 5;
-    massage.innerHTML = `Computer is Batting ! You are Bowling`;
+    massage.innerHTML = `Computer is Batting ! You are Bowling now`;
   } else if (targetCounter != 5) {
     score.disabled = false;
     score.innerHTML = `Score : 0`;
@@ -264,7 +267,7 @@ target.addEventListener("click", () => {
     });
     userConcern = 4;
     targetCounter = 10;
-    massage.innerHTML = `Computer is Bowling ! You are Batting`;
+    massage.innerHTML = `Computer is Bowling ! You are Batting now`;
   }
 });
 
@@ -306,7 +309,7 @@ function computerBat(userInput, computerInput) {
         e.disabled = true;
       });
       target.disabled = true;
-      score.disabled = true;
+      score.disabled = false;
     }
   } else {
     massage.innerHTML = "Computer is Out !! You won";
@@ -392,11 +395,11 @@ function computerScoreTracker(userInput, computerInput) {
     score.innerHTML = `Score : ${computerScore}`;
   } else {
     massage.innerHTML =
-      "Computer are Out !! Press  the target button for your batting";
+      "Computer is Out !! Press the target button for your batting";
     buttons.forEach((e) => {
       e.disabled = true;
     });
-    score.disabled = true;
+    score.disabled = false;
     target.innerHTML = `Target : ${computerScore + 1}`;
     target.disabled = false;
     targetCounter = 2;
@@ -446,3 +449,6 @@ function userBatting(userInput, computerInput) {
     target.disabled = true;
   }
 }
+score.addEventListener("dblclick",()=>{
+  location.reload();
+})
