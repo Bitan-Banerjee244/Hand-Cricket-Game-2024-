@@ -135,30 +135,7 @@ buttons.forEach((elem) => {
   });
 });
 
-// Updated button click event listener with disabling buttons to prevent double-click
-// buttons.forEach((elem) => {
-//   elem.addEventListener("click", () => {
-//     // Disable buttons immediately after click
-//     disableButtons();
 
-//     let userInput = decode(elem.innerHTML);
-//     console.log(userInput);
-//     let computerInput = randomNumber();
-
-//     if (userConcern === 1) {
-//       batting(userInput, computerInput); // when user chose batting
-//     } else if (userConcern === 2) {
-//       bowling(userInput, computerInput); // when user chose bowling
-//     } else if (userConcern === 3) {
-//       userBowling(userInput, computerInput); // user chose batting and then bowls to computer
-//     } else if (userConcern === 4) {
-//       userBatting(userInput, computerInput); // user chose bowling and then bats
-//     }
-
-//     // Re-enable buttons after a short delay, enough for game state to update
-//     setTimeout(enableButtons, 500); // Adjust the time based on animation/logic
-//   });
-// });
 
 // Disable buttons function
 function disableButtons() {
